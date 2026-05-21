@@ -1,0 +1,14 @@
+.topBar {
+  background: linear-gradient(90deg, #003b91, #005bea);
+  color: white;
+  padding: 22px 8%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cartTitle {
+  padding: 60px 8%;
+  color: #0f2147;
+  font-size: 36px;
+}

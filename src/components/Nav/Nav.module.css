@@ -1,0 +1,31 @@
+.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  margin: 0;
+  padding: 0;
+}
+
+.link,
+.cart {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.link:hover,
+.cart:hover {
+  color: #dbeafe;
+}
+
+.cart {
+  margin-left: 70px;
+  font-weight: 700;
+}
+
+.active {
+  border-bottom: 2px solid white;
+  padding-bottom: 4px;
+}

@@ -1,0 +1,67 @@
+.footer {
+  background: linear-gradient(90deg, #003b91, #005bea);
+  color: white;
+  padding: 35px 8% 20px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1.3fr 1.7fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.brand h2,
+.team h3,
+.links h3,
+.social h3 {
+  margin-bottom: 14px;
+}
+
+.brand p,
+.team p,
+.links a {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+}
+
+.icons {
+  display: flex;
+  gap: 14px;
+  font-size: 24px;
+}
+
+.copy {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  margin-top: 28px;
+  padding-top: 18px;
+  text-align: center;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+}

@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 14 Pro",
+    "price": 999,
+    "category": "Smartphones",
+    "image": "📱",
+     "stock": 31
+  },
+
+  {
+    "id": 2,
+    "name": "Samsung S24 Ultra",
+    "price": 1099,
+    "category": "Smartphones",
+    "image": "📱",
+     "stock": 22
+  },
+
+  {
+    "id": 3,
+    "name": "AirPods Pro 2",
+    "price": 249,
+    "category": "Auriculares",
+    "image": "🎧",
+     "stock": 28
+  },
+
+  {
+    "id": 4,
+    "name": "Sony WH-1000XM5",
+    "price": 399,
+    "category": "Auriculares",
+    "image": "🎧",
+     "stock": 8
+  },
+
+  {
+    "id": 5,
+    "name": "Apple Watch Series 9",
+    "price": 499,
+    "category": "Smartwatch",
+    "image": "⌚",
+     "stock": 12
+  },
+
+  {
+    "id": 6,
+    "name": "Galaxy Watch 6",
+    "price": 379,
+    "category": "Smartwatch",
+    "image": "⌚",
+     "stock": 30
+  },
+
+  {
+    "id": 7,
+    "name": "MacBook Air M2",
+    "price": 1299,
+    "category": "Laptops",
+    "image": "💻",
+     "stock": 16
+  },
+
+  {
+    "id": 8,
+    "name": "Dell XPS 13",
+    "price": 1199,
+    "category": "Laptops",
+    "image": "💻",
+     "stock": 12
+  }
+]

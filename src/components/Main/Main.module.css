@@ -1,0 +1,51 @@
+.hero {
+  min-height: 420px;
+  padding: 60px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #ffffff, #eaf3ff);
+}
+
+.heroText {
+  max-width: 480px;
+}
+
+.label {
+  color: #005bea;
+  font-weight: 800;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 22px;
+  color: #0f2147;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 28px;
+  color: #334155;
+}
+
+.button {
+  background-color: #005bea;
+  color: white;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+
+.heroImage img {
+  max-width: 470px;
+  width: 100%;
+}
+
+.button {
+  display: inline-block;
+  text-decoration: none;
+}
