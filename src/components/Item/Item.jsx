@@ -35,7 +35,7 @@ const Item = ({
     <article className={styles.card}>
 
       <div className={styles.image}>
-        {image}
+        <img src={image} alt={name} />
       </div>
 
       <p className={styles.category}>

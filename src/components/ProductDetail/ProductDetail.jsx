@@ -6,6 +6,7 @@ import styles from "./ProductDetail.module.css";
 
 const ProductDetail = () => {
   const { id } = useParams();
+
   const { addToCart } = useContext(CartContext);
 
   const [product, setProduct] = useState(null);
@@ -43,7 +44,9 @@ const ProductDetail = () => {
   if (loading) {
     return (
       <section className={styles.container}>
-        <h1 className={styles.notFound}>Cargando producto...</h1>
+        <h1 className={styles.message}>
+          Cargando producto...
+        </h1>
       </section>
     );
   }
@@ -51,7 +54,9 @@ const ProductDetail = () => {
   if (error) {
     return (
       <section className={styles.container}>
-        <h1 className={styles.notFound}>Producto no encontrado.</h1>
+        <h1 className={styles.message}>
+          Producto no encontrado.
+        </h1>
       </section>
     );
   }
@@ -63,13 +68,17 @@ const ProductDetail = () => {
   return (
     <section className={styles.container}>
       <div className={styles.detailCard}>
+
         <div className={styles.imageBox}>
-          <span className={styles.image}>
-            {product.image}
-          </span>
+          <img
+            className={styles.image}
+            src={product.image}
+            alt={product.name}
+          />
         </div>
 
         <div className={styles.info}>
+
           <p className={styles.category}>
             {product.category}
           </p>
@@ -79,8 +88,9 @@ const ProductDetail = () => {
           </h1>
 
           <p className={styles.description}>
-            Producto seleccionado de la colección NovaTech. Tecnología moderna,
-            rendimiento confiable y diseño pensado para el uso diario.
+            Producto seleccionado de la colección NovaTech.
+            Tecnología moderna, rendimiento confiable
+            y diseño pensado para el uso diario.
           </p>
 
           <p className={styles.price}>
@@ -88,14 +98,17 @@ const ProductDetail = () => {
           </p>
 
           <p className={styles.stock}>
-            Stock disponible: <strong>{product.stock}</strong>
+            Stock disponible:
+            <strong> {product.stock}</strong>
           </p>
 
           <ItemCount
             stock={product.stock}
             onAdd={handleAdd}
           />
+
         </div>
+
       </div>
     </section>
   );

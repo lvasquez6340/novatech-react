@@ -13,9 +13,11 @@
   box-shadow: 0 8px 22px rgba(0, 42, 120, 0.14);
 }
 
-.image {
-  font-size: 58px;
-  margin-bottom: 16px;
+.image img {
+  width: 100%;
+  max-width: 180px;
+  height: 180px;
+  object-fit: contain;
 }
 
 .category {

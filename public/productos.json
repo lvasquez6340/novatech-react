@@ -4,7 +4,7 @@
     "name": "iPhone 14 Pro",
     "price": 999,
     "category": "Smartphones",
-    "image": "📱",
+    "image": "/images/iphone14.jpg",
      "stock": 31
   },
 
@@ -13,7 +13,7 @@
     "name": "Samsung S24 Ultra",
     "price": 1099,
     "category": "Smartphones",
-    "image": "📱",
+    "image": "/images/s24ultra.jpg",
      "stock": 22
   },
 
@@ -22,7 +22,7 @@
     "name": "AirPods Pro 2",
     "price": 249,
     "category": "Auriculares",
-    "image": "🎧",
+    "image": "/images/airpodspro2.jpg",
      "stock": 28
   },
 
@@ -31,7 +31,7 @@
     "name": "Sony WH-1000XM5",
     "price": 399,
     "category": "Auriculares",
-    "image": "🎧",
+    "image": "/images/sonyxm5.jpg",
      "stock": 8
   },
 
@@ -40,7 +40,7 @@
     "name": "Apple Watch Series 9",
     "price": 499,
     "category": "Smartwatch",
-    "image": "⌚",
+    "image": "/images/applewatch9.jpg",
      "stock": 12
   },
 
@@ -49,7 +49,7 @@
     "name": "Galaxy Watch 6",
     "price": 379,
     "category": "Smartwatch",
-    "image": "⌚",
+    "image": "/images/galaxywatch6.jpg",
      "stock": 30
   },
 
@@ -58,7 +58,7 @@
     "name": "MacBook Air M2",
     "price": 1299,
     "category": "Laptops",
-    "image": "💻",
+    "image": "/images/macbookairm2.jpg",
      "stock": 16
   },
 
@@ -67,7 +67,7 @@
     "name": "Dell XPS 13",
     "price": 1199,
     "category": "Laptops",
-    "image": "💻",
+    "image": "/images/dellxps13.jpg",
      "stock": 12
   }
 ]

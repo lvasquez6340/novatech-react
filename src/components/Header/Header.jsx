@@ -1,9 +1,30 @@
+import logo from "../../assets/logo.png";
 import styles from "./Header.module.css";
 
 const Header = () => {
   return (
-    <header>
-      <h1 className={styles.logo}>🛍️ NovaTech</h1>
+    <header className={styles.header}>
+
+      <div className={styles.logoContainer}>
+
+        <img
+          src={logo}
+          alt="Logo NovaTech"
+          className={styles.logo}
+        />
+
+        <div className={styles.textContainer}>
+          <h1 className={styles.title}>
+            NovaTech
+          </h1>
+
+          <p className={styles.subtitle}>
+            Tecnología sin límites
+          </p>
+        </div>
+
+      </div>
+
     </header>
   );
 };

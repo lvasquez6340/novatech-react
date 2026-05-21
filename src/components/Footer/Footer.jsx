@@ -1,3 +1,4 @@
+import logo from "../../assets/logo.png";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
@@ -5,7 +6,16 @@ const Footer = () => {
     <footer className={styles.footer}>
       <section className={styles.content}>
         <div className={styles.brand}>
-          <h2>🛍️ NovaTech</h2>
+          <div className={styles.brandHeader}>
+            <img
+              src={logo}
+              alt="Logo NovaTech"
+              className={styles.logo}
+            />
+
+            <h2>NovaTech</h2>
+          </div>
+
           <p>Tecnología moderna y productos premium.</p>
         </div>
 
@@ -26,6 +36,7 @@ const Footer = () => {
 
         <div className={styles.social}>
           <h3>Síguenos</h3>
+
           <div className={styles.icons}>
             <span>📘</span>
             <span>📸</span>

@@ -29,8 +29,10 @@
   align-items: center;
 }
 
-.image {
-  font-size: 150px;
+.image img {
+  width: 100%;
+  max-width: 350px;
+  object-fit: contain;
 }
 
 .info {
