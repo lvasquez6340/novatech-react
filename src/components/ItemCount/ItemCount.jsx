@@ -24,7 +24,6 @@ const ItemCount = ({ stock, onAdd }) => {
   };
 
   return (
-
     <div className={styles.wrapper}>
 
       <div className={styles.counter}>
@@ -52,12 +51,12 @@ const ItemCount = ({ stock, onAdd }) => {
       <button
         className={styles.addButton}
         onClick={handleAdd}
+        disabled={quantity === 0}
       >
         Agregar al carrito
       </button>
 
     </div>
-
   );
 };
 

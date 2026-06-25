@@ -1,13 +1,12 @@
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import { useCart } from "../../context/CartContext";
 import styles from "./CartWidget.module.css";
 
 const CartWidget = () => {
-  const { getTotalQuantity } = useContext(CartContext);
+  const { getCartQuantity } = useCart();
 
   return (
     <span className={styles.cartWidget}>
-      🛒 Carrito ({getTotalQuantity()})
+      🛒 Carrito ({getCartQuantity()})
     </span>
   );
 };

@@ -1,8 +1,7 @@
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import styles from "./Item.module.css";
-import { useContext } from "react";
-import { CartContext } from "../../context/CartContext";
+import { useCart } from "../../context/CartContext";
 
 const Item = ({
   id,
@@ -12,11 +11,9 @@ const Item = ({
   image,
   stock
 }) => {
-
-  const { addToCart } = useContext(CartContext);
+  const { addToCart } = useCart();
 
   const handleAdd = (quantity) => {
-
     const product = {
       id,
       name,
@@ -27,13 +24,10 @@ const Item = ({
     };
 
     addToCart(product, quantity);
-
   };
 
   return (
-
     <article className={styles.card}>
-
       <div className={styles.image}>
         <img src={image} alt={name} />
       </div>
@@ -59,11 +53,8 @@ const Item = ({
         stock={stock}
         onAdd={handleAdd}
       />
-
     </article>
-
   );
-
 };
 
 export default Item;

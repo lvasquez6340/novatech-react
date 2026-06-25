@@ -10,63 +10,164 @@
   margin-bottom: 40px;
 }
 
+.empty {
+  font-size: 20px;
+  color: #333;
+}
+
 .card {
   background: white;
-
   border-radius: 18px;
-
   padding: 24px;
-
   margin-bottom: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
 
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+.productInfo {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.image {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
 }
 
 .name {
   font-size: 28px;
   color: #0a2259;
-
   margin-bottom: 12px;
 }
 
 .text {
   font-size: 18px;
-
   margin-bottom: 8px;
-
   color: #333;
 }
 
 .total {
   font-size: 36px;
-
   margin-top: 40px;
-
   color: #005bea;
 }
 
 .button {
   margin-top: 20px;
-
   padding: 14px 24px;
-
   border: none;
-
   border-radius: 12px;
-
   background: #005bea;
-
   color: white;
-
   font-size: 18px;
-
   font-weight: bold;
-
   cursor: pointer;
-
   transition: 0.3s;
 }
 
 .button:hover {
+  background: #003b91;
+}
+
+.deleteButton {
+  margin-top: 14px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  background-color: #dc2626;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.deleteButton:hover {
+  background-color: #991b1b;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .total {
+    font-size: 28px;
+  }
+
+  .productInfo {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image {
+    width: 180px;
+    height: 180px;
+    align-self: center;
+  }
+
+  .name {
+    font-size: 24px;
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
+
+  .title {
+    font-size: 30px;
+  }
+
+  .image {
+    width: 140px;
+    height: 140px;
+  }
+
+  .button,
+  .deleteButton {
+    width: 100%;
+  }
+}
+.emptyBox {
+  background: white;
+  border-radius: 18px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.emptyTitle {
+  font-size: 32px;
+  color: #0a2259;
+  margin-bottom: 14px;
+}
+
+.emptyText {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.shopButton {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  background: #005bea;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.shopButton:hover {
   background: #003b91;
 }

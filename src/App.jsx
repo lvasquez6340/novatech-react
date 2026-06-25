@@ -1,6 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import Cart from "./components/Cart/Cart";
-import ProductDetail from "./components/ProductDetail/ProductDetail";
+import CategoryList from "./components/CategoryList/CategoryList";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
@@ -15,12 +16,14 @@ function App() {
         <Nav />
       </div>
 
-      <Routes>
-       <Route path="/" element={<Main />} />
-       <Route path="/productos" element={<Main />} />
-       <Route path="/producto/:id" element={<ProductDetail />} />
-       <Route path="/carrito" element={<Cart />} />
-      </Routes>
+  <Routes>
+     <Route path="/" element={<Main />} />
+     <Route path="/productos" element={<Main />} />
+     <Route path="/categoria/:categoryId" element={<Main />} />
+     <Route path="/producto/:id" element={<ItemDetailContainer />} />
+     <Route path="/carrito" element={<Cart />} />
+     <Route path="/categorias" element={<CategoryList />} />
+  </Routes>
 
       <Footer />
     </>

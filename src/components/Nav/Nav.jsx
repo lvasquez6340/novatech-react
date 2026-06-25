@@ -43,15 +43,15 @@ const Nav = () => {
         <li>
 
           <NavLink
-            to="/categorias"
-            className={({ isActive }) =>
-              isActive
-                ? `${styles.link} ${styles.active}`
-                : styles.link
-            }
-          >
-            Categorías
-          </NavLink>
+  to="/categorias"
+  className={({ isActive }) =>
+    isActive
+      ? `${styles.link} ${styles.active}`
+      : styles.link
+  }
+>
+  Categorías
+</NavLink>
 
         </li>
 

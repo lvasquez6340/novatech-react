@@ -1,13 +1,19 @@
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
 import styles from "./ItemListContainer.module.css";
 
 const ItemListContainer = () => {
+  const { categoryId } = useParams();
+
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
+    setError(false);
+
     fetch("/productos.json")
       .then((response) => {
         if (!response.ok) {
@@ -17,7 +23,11 @@ const ItemListContainer = () => {
         return response.json();
       })
       .then((data) => {
-        setProducts(data);
+        const filteredProducts = categoryId
+          ? data.filter((product) => product.category === categoryId)
+          : data;
+
+        setProducts(filteredProducts);
       })
       .catch(() => {
         setError(true);
@@ -25,7 +35,7 @@ const ItemListContainer = () => {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [categoryId]);
 
   if (loading) {
     return (
@@ -46,7 +56,9 @@ const ItemListContainer = () => {
   return (
     <section>
       <h2 className={styles.title}>
-        Productos destacados
+        {categoryId
+          ? `Categoría: ${categoryId}`
+          : "Productos destacados"}
       </h2>
 
       <ItemList products={products} />
