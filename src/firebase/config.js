@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "TU_API_KEY",
+  apiKey: "AIzaSyDwKS4QsfdyUwxxoM-7zSDtdcbtz1S6bLw",
   authDomain: "novatech-reac.firebaseapp.com",
   projectId: "novatech-reac",
   storageBucket: "novatech-reac.firebasestorage.app",
