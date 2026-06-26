@@ -72,11 +72,14 @@ const ProductFormContainer = () => {
       });
 
       setSuccess(true);
-    } catch {
-      setErrors({
-        general: "No se pudo guardar el producto."
-      });
-    } finally {
+    }  catch (error) {
+  console.log("ERROR COMPLETO:", error);
+  console.log("MENSAJE:", error.message);
+
+  setErrors({
+    general: error.message
+  });
+} finally {
       setLoading(false);
     }
   };
