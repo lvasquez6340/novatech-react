@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "../ItemList/ItemList";
+import { getProducts } from "../../services/productsService";
 import styles from "./ItemListContainer.module.css";
 
 const ItemListContainer = () => {
@@ -11,30 +12,27 @@ const ItemListContainer = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
-    setError(false);
+    const fetchProducts = async () => {
+      try {
+        setLoading(true);
+        setError(false);
 
-    fetch("/productos.json")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Error al cargar los productos");
-        }
+        const data = await getProducts();
 
-        return response.json();
-      })
-      .then((data) => {
         const filteredProducts = categoryId
           ? data.filter((product) => product.category === categoryId)
           : data;
 
         setProducts(filteredProducts);
-      })
-      .catch(() => {
+      } catch (error) {
+        console.error(error);
         setError(true);
-      })
-      .finally(() => {
+      } finally {
         setLoading(false);
-      });
+      }
+    };
+
+    fetchProducts();
   }, [categoryId]);
 
   if (loading) {
