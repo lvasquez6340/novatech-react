@@ -1,12 +1,14 @@
 .header {
   display: flex;
   align-items: center;
+  max-width: 100%;
 }
 
 .logoContainer {
   display: flex;
   align-items: center;
   gap: 14px;
+  max-width: 100%;
 }
 
 .logo {
@@ -17,6 +19,7 @@
   background: white;
   padding: 6px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  flex-shrink: 0;
 }
 
 .textContainer {
@@ -37,4 +40,39 @@
   color: rgba(255, 255, 255, 0.75);
   letter-spacing: 1px;
   margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .logoContainer {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .logo {
+    width: 56px;
+    height: 56px;
+  }
+
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .subtitle {
+    font-size: 0.68rem;
+  }
 }

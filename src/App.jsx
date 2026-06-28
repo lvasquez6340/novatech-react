@@ -7,6 +7,7 @@ import Register from "./components/Auth/Register";
 import Admin from "./components/Admin/Admin";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import "./App.css";
+import Contact from "./components/Contact/Contact";
 import Header from "./components/Header/Header";
 import Nav from "./components/Nav/Nav";
 import Main from "./components/Main/Main";
@@ -29,6 +30,7 @@ function App() {
   <Route path="/carrito" element={<Cart />} />
   <Route path="/login" element={<Login />} />
   <Route path="/registro" element={<Register />} />
+  <Route path="/contacto" element={<Contact />} />
 
   <Route
     path="/admin"

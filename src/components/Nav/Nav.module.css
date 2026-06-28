@@ -2,9 +2,12 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 34px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
   margin: 0;
   padding: 0;
+  max-width: 100%;
 }
 
 .link,
@@ -13,6 +16,7 @@
   text-decoration: none;
   font-size: 16px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .link:hover,
@@ -21,11 +25,40 @@
 }
 
 .cart {
-  margin-left: 70px;
+  margin-left: 0;
   font-weight: 700;
 }
 
 .active {
   border-bottom: 2px solid white;
   padding-bottom: 4px;
+}
+
+@media (max-width: 900px) {
+  .menu {
+    justify-content: center;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu {
+    gap: 14px;
+  }
+
+  .link,
+  .cart {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 360px) {
+  .menu {
+    gap: 10px;
+  }
+
+  .link,
+  .cart {
+    font-size: 13px;
+  }
 }

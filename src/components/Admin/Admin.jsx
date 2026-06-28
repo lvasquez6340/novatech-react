@@ -2,6 +2,8 @@ import { useState } from "react";
 import { useAuth } from "../../context/AuthContext";
 import ProductFormContainer from "./ProductFormContainer";
 import ProductAdminList from "./ProductAdminList";
+import { FaBoxOpen, FaPlusCircle, FaEdit, FaTrash, FaEnvelope } from "react-icons/fa";
+import ContactAdminList from "./ContactAdminList";
 import styles from "./Admin.module.css";
 
 const Admin = () => {
@@ -83,6 +85,14 @@ const Admin = () => {
             <h3>Eliminar</h3>
             <p>Quitar productos</p>
           </button>
+          <button
+  className={styles.card}
+  onClick={() => goToSection("contact-list")}
+>
+  <span><FaEnvelope /></span>
+  <h3>Mensajes</h3>
+  <p>Ver consultas recibidas</p>
+</button>
         </div>
 
         <div id="product-form">
@@ -99,6 +109,9 @@ const Admin = () => {
             onEdit={handleEdit}
           />
         </div>
+        <div id="contact-list">
+  <ContactAdminList />
+</div>
 
         <button
           className={styles.logout}
