@@ -1,16 +1,102 @@
-# React + Vite
+# 🚀 NovaTech
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+NovaTech es una tienda online desarrollada con **React + Vite** como proyecto final del curso de React.
 
-Currently, two official plugins are available:
+La aplicación permite navegar por un catálogo de productos tecnológicos, visualizar el detalle de cada producto, administrar un carrito de compras y gestionar el catálogo mediante un panel de administración con autenticación.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## ✨ Funcionalidades
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* Inicio con productos destacados.
+* Catálogo de productos.
+* Filtrado por categorías.
+* Detalle de cada producto.
+* Carrito de compras.
+* Registro e inicio de sesión con Firebase Authentication.
+* Panel de administración protegido.
+* Crear productos.
+* Editar productos.
+* Eliminar productos.
+* Subida de imágenes mediante ImgBB.
+* Base de datos en Firebase Firestore.
+* Formulario de contacto.
+* Diseño responsive.
+* SEO básico con React Helmet.
+* Iconografía mediante React Icons.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tecnologías utilizadas
+
+* React
+* Vite
+* React Router DOM
+* Context API
+* Firebase Authentication
+* Cloud Firestore
+* ImgBB API
+* React Icons
+* React Helmet Async
+* React Spinners
+* CSS Modules
+
+---
+
+## 📦 Instalación
+
+Clonar el repositorio:
+
+```bash
+git clone https://github.com/lvasquez6340/novatech-react.git
+```
+
+Instalar dependencias:
+
+```bash
+npm install
+```
+
+Ejecutar el proyecto:
+
+```bash
+npm run dev
+```
+
+Generar versión de producción:
+
+```bash
+npm run build
+```
+
+---
+
+## 👤 Acceso al panel de administración
+
+Para acceder al panel de administración es necesario iniciar sesión con un usuario registrado en Firebase Authentication.
+
+---
+
+## 📁 Estructura del proyecto
+
+* Componentes reutilizables.
+* Context API para autenticación y carrito.
+* Servicios para Firebase e ImgBB.
+* CSS Modules para estilos.
+* Firestore como base de datos.
+
+---
+
+## 📱 Responsive Design
+
+La aplicación fue desarrollada para adaptarse a computadoras, tablets y dispositivos móviles.
+
+---
+
+## 👨‍💻 Autor
+
+Luis Martín Vásquez
+
+Proyecto desarrollado como trabajo final del curso de React.
+GitHub:
+https://github.com/lvasquez6340
