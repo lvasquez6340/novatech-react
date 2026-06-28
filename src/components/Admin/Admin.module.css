@@ -1,98 +1,107 @@
 .container {
-  min-height: 70vh;
-  padding: 70px 8%;
-  background: linear-gradient(90deg, #ffffff, #eaf3ff);
+  background: #edf4ff;
+  min-height: 100vh;
+  padding: 40px 20px;
 }
 
 .panel {
-  max-width: 1100px;
-  margin: 0 auto;
+  max-width: 1200px;
+  margin: auto;
   background: white;
   border-radius: 24px;
-  padding: 45px;
-  box-shadow: 0 8px 30px rgba(0, 42, 120, 0.12);
+  padding: 40px;
+  box-shadow: 0 8px 30px rgba(0, 42, 120, 0.08);
 }
 
 .label {
   color: #005bea;
   font-weight: 800;
-  letter-spacing: 1px;
-  margin-bottom: 10px;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
 }
 
 .title {
-  font-size: 44px;
+  font-size: 3rem;
   color: #0a2259;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
 }
 
 .user {
   color: #334155;
-  margin-bottom: 36px;
+  margin-bottom: 35px;
+  font-size: 18px;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-  margin-bottom: 36px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
 }
 
 .card {
-  background: #f1f7ff;
+  background: #eef5ff;
+  border: none;
   border-radius: 18px;
-  padding: 26px 18px;
+  padding: 35px 20px;
+  cursor: pointer;
+  transition: 0.3s;
   text-align: center;
+  font-family: inherit;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  background: #dcecff;
+  box-shadow: 0 10px 25px rgba(0, 91, 234, 0.18);
 }
 
 .card span {
-  font-size: 34px;
+  font-size: 48px;
 }
 
 .card h3 {
+  margin-top: 20px;
   color: #0a2259;
-  margin: 12px 0 8px;
+  font-size: 32px;
 }
 
 .card p {
+  margin-top: 10px;
   color: #475569;
-  font-size: 15px;
 }
 
 .logout {
-  padding: 14px 24px;
-  border: none;
-  border-radius: 12px;
+  margin-top: 40px;
   background: #dc2626;
   color: white;
-  font-weight: 800;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 12px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
 .logout:hover {
-  background: #991b1b;
+  background: #b91c1c;
 }
 
-@media (max-width: 850px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .panel {
-    padding: 30px 20px;
+    padding: 25px;
   }
 
   .title {
-    font-size: 34px;
+    font-size: 2rem;
   }
 
   .cards {
     grid-template-columns: 1fr;
   }
 
-  .logout {
-    width: 100%;
+  .card h3 {
+    font-size: 26px;
   }
 }

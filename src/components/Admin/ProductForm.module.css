@@ -75,3 +75,11 @@
   color: #0a2259;
   margin-bottom: 12px;
 }
+.cancelButton {
+  margin-left: 12px;
+  background: #64748b !important;
+}
+
+.cancelButton:hover {
+  background: #475569 !important;
+}

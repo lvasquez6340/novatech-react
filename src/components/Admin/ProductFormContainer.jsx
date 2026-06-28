@@ -1,23 +1,51 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProductForm from "./ProductForm";
 import ProductSuccess from "./ProductSuccess";
 import { validateProduct } from "../../utils/validateProduct";
 import { uploadImage } from "../../services/uploadImage";
-import { createProduct } from "../../services/productsService";
+import {
+  createProduct,
+  updateProduct
+} from "../../services/productsService";
 
-const ProductFormContainer = () => {
-  const [product, setProduct] = useState({
-    name: "",
-    price: "",
-    category: "",
-    stock: "",
-    description: "",
-    file: null
-  });
+const initialProduct = {
+  name: "",
+  price: "",
+  category: "",
+  stock: "",
+  description: "",
+  file: null,
+  image: ""
+};
 
+const ProductFormContainer = ({
+  productToEdit,
+  onFinish,
+  onCancelEdit
+}) => {
+  const [product, setProduct] = useState(initialProduct);
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+
+  const isEditing = Boolean(productToEdit);
+
+  useEffect(() => {
+    if (productToEdit) {
+      setProduct({
+        name: productToEdit.name || "",
+        price: productToEdit.price || "",
+        category: productToEdit.category || "",
+        stock: productToEdit.stock || "",
+        description: productToEdit.description || "",
+        file: null,
+        image: productToEdit.image || ""
+      });
+
+      setSuccess(false);
+      setErrors({});
+    }
+  }, [productToEdit]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -35,10 +63,18 @@ const ProductFormContainer = () => {
     });
   };
 
+  const resetForm = () => {
+    setProduct(initialProduct);
+    setErrors({});
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const validationErrors = validateProduct(product);
+    const validationErrors = validateProduct(
+      product,
+      isEditing
+    );
 
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
@@ -49,9 +85,13 @@ const ProductFormContainer = () => {
       setLoading(true);
       setErrors({});
 
-      const imageUrl = await uploadImage(product.file);
+      let imageUrl = product.image;
 
-      const newProduct = {
+      if (product.file) {
+        imageUrl = await uploadImage(product.file);
+      }
+
+      const productData = {
         name: product.name,
         price: Number(product.price),
         category: product.category,
@@ -60,26 +100,22 @@ const ProductFormContainer = () => {
         image: imageUrl
       };
 
-      await createProduct(newProduct);
+      if (isEditing) {
+        await updateProduct(productToEdit.id, productData);
+      } else {
+        await createProduct(productData);
+      }
 
-      setProduct({
-        name: "",
-        price: "",
-        category: "",
-        stock: "",
-        description: "",
-        file: null
-      });
-
+      resetForm();
       setSuccess(true);
-    }  catch (error) {
-  console.log("ERROR COMPLETO:", error);
-  console.log("MENSAJE:", error.message);
+      onFinish();
+    } catch (error) {
+      console.log("ERROR COMPLETO:", error);
 
-  setErrors({
-    general: error.message
-  });
-} finally {
+      setErrors({
+        general: error.message
+      });
+    } finally {
       setLoading(false);
     }
   };
@@ -87,6 +123,7 @@ const ProductFormContainer = () => {
   if (success) {
     return (
       <ProductSuccess
+        isEditing={isEditing}
         onBack={() => setSuccess(false)}
       />
     );
@@ -97,9 +134,14 @@ const ProductFormContainer = () => {
       product={product}
       errors={errors}
       loading={loading}
+      isEditing={isEditing}
       onChange={handleChange}
       onFileChange={handleFileChange}
       onSubmit={handleSubmit}
+      onCancelEdit={() => {
+        resetForm();
+        onCancelEdit();
+      }}
     />
   );
 };

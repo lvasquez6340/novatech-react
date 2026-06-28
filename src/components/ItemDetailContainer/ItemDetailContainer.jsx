@@ -1,60 +1,58 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 import { useCart } from "../../context/CartContext";
+import { getProductById } from "../../services/productsService";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 const ItemDetailContainer = () => {
-
   const { id } = useParams();
-
   const { addToCart } = useCart();
 
   const [product, setProduct] = useState(null);
-
   const [loading, setLoading] = useState(true);
-
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        setLoading(true);
+        setError(false);
 
-    fetch("/productos.json")
-
-      .then((response) => {
-
-        if (!response.ok) {
-          throw new Error();
-        }
-
-        return response.json();
-
-      })
-
-      .then((data) => {
-
-        const selectedProduct = data.find(
-          (item) => item.id === Number(id)
-        );
-
-        if (!selectedProduct) {
-          throw new Error();
-        }
+        const selectedProduct = await getProductById(id);
 
         setProduct(selectedProduct);
-
-      })
-
-      .catch(() => {
+      } catch (error) {
+        console.error(error);
         setError(true);
-      })
-
-      .finally(() => {
+      } finally {
         setLoading(false);
-      });
+      }
+    };
 
+    fetchProduct();
   }, [id]);
 
   if (loading) {
-    return <h1>Cargando producto...</h1>;
+    return (
+      <section
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "20px",
+          padding: "80px"
+        }}
+      >
+        <ClipLoader
+          color="#005bea"
+          size={60}
+        />
+
+        <h2>Cargando producto...</h2>
+      </section>
+    );
   }
 
   if (error) {

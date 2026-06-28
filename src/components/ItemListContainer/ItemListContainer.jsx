@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { ClipLoader } from "react-spinners";
 import ItemList from "../ItemList/ItemList";
 import { getProducts } from "../../services/productsService";
 import styles from "./ItemListContainer.module.css";
@@ -38,6 +39,11 @@ const ItemListContainer = () => {
   if (loading) {
     return (
       <section className={styles.status}>
+        <ClipLoader
+          color="#005bea"
+          size={60}
+        />
+
         <h2>Cargando productos...</h2>
       </section>
     );

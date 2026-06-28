@@ -1,0 +1,118 @@
+.container {
+  margin-top: 45px;
+  background: white;
+  border-radius: 22px;
+  padding: 35px;
+  box-shadow: 0 6px 24px rgba(0, 42, 120, 0.1);
+}
+
+.container h2 {
+  color: #0a2259;
+  margin-bottom: 24px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 18px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+}
+
+.image {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+}
+
+.info h3 {
+  color: #0a2259;
+  margin-bottom: 10px;
+}
+
+.info p {
+  color: #334155;
+  margin-bottom: 5px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.editButton,
+.deleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-width: 120px;
+  padding: 12px 18px;
+
+  border: none;
+  border-radius: 10px;
+
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.editButton {
+  background: #2563eb;
+}
+
+.editButton:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.deleteButton {
+  background: #dc2626;
+}
+
+.deleteButton:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+}
+
+.error {
+  color: #b91c1c;
+  font-weight: 700;
+}
+
+.empty {
+  color: #475569;
+}
+
+@media (max-width: 700px) {
+  .card {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .image {
+    margin: 0 auto;
+  }
+
+  .actions {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .editButton,
+  .deleteButton {
+    width: 100%;
+  }
+}

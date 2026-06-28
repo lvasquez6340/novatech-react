@@ -1,16 +1,23 @@
+import { ClipLoader } from "react-spinners";
 import styles from "./ProductForm.module.css";
 
 const ProductForm = ({
   product,
   errors,
   loading,
+  isEditing,
   onChange,
   onFileChange,
-  onSubmit
+  onSubmit,
+  onCancelEdit
 }) => {
   return (
     <form className={styles.form} onSubmit={onSubmit}>
-      <h2>Agregar nuevo producto</h2>
+      <h2>
+        {isEditing
+          ? "Editar producto"
+          : "Agregar nuevo producto"}
+      </h2>
 
       {errors.general && (
         <p className={styles.error}>{errors.general}</p>
@@ -63,14 +70,22 @@ const ProductForm = ({
         value={product.description}
         onChange={onChange}
       />
-      {errors.description && <p className={styles.error}>{errors.description}</p>}
+      {errors.description && (
+        <p className={styles.error}>{errors.description}</p>
+      )}
 
-      <label>Imagen</label>
+      <label>
+        {isEditing
+          ? "Cambiar imagen"
+          : "Imagen"}
+      </label>
+
       <input
         type="file"
         accept="image/*"
         onChange={onFileChange}
       />
+
       {errors.file && <p className={styles.error}>{errors.file}</p>}
 
       {product.file && (
@@ -79,9 +94,44 @@ const ProductForm = ({
         </p>
       )}
 
+      {isEditing && product.image && !product.file && (
+        <p className={styles.preview}>
+          Se mantendrá la imagen actual.
+        </p>
+      )}
+
       <button type="submit" disabled={loading}>
-        {loading ? "Guardando..." : "Guardar producto"}
+        {loading ? (
+          <span
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap: "10px"
+            }}
+          >
+            <ClipLoader
+              color="#ffffff"
+              size={18}
+            />
+            Guardando...
+          </span>
+        ) : isEditing ? (
+          "Guardar cambios"
+        ) : (
+          "Guardar producto"
+        )}
       </button>
+
+      {isEditing && (
+        <button
+          type="button"
+          className={styles.cancelButton}
+          onClick={onCancelEdit}
+        >
+          Cancelar edición
+        </button>
+      )}
     </form>
   );
 };
