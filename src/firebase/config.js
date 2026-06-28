@@ -1,12 +1,12 @@
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDwKS4QsfdyUwxxoM-7zSDtdcbtz1S6bLw",
-  authDomain: "novatech-reac.firebaseapp.com",
-  projectId: "novatech-reac",
-  storageBucket: "novatech-reac.firebasestorage.app",
-  messagingSenderId: "298690370297",
-  appId: "1:298690370297:web:e4b8df4d139805c1786028"
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID
 };
 
 const app = initializeApp(firebaseConfig);
